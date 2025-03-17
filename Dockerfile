@@ -49,14 +49,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements first for better caching
-COPY requirements.txt .
+# Copy requirements.txt first for caching
+COPY requirements.txt /app/
 
-# Install Python dependencies
+# Ensure pip installs dependencies from requirements.txt
 RUN pip3 install --no-cache-dir --upgrade pip && \
-    pip3 install --no-cache-dir torch torchaudio numpy fastapi uvicorn python-dotenv
+    pip3 install --no-cache-dir -r requirements.txt  # Fix: Ensure this installs properly
 
-# Copy application code
+# Copy the rest of the application code
 COPY . /app
 
 # Copy downloaded model from the model-downloader stage
