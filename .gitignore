@@ -1,0 +1,14 @@
+ckpt.pt
+# Ignore virtual environment
+.venv/
+
+# Ignore cache directory
+cache/
+
+# Ignore logs directory
+logs/
+
+./cache
+
+__pycache__
+.env
