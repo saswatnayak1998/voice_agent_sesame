@@ -41,14 +41,12 @@ speakers = [0, 1, 0, 0]
 transcripts = [
     "Hey how are you doing.",
     "Pretty good, pretty good.",
-    "I'm great.",
-    "So happy to be speaking to you.",
+
 ]
 audio_paths = [
     "audio_files/utterance_0.wav",
     "audio_files/utterance_1.wav",
-    "audio_files/utterance_2.wav",
-    "audio_files/utterance_3.wav",
+
 ]
 
 def load_audio(audio_path):
@@ -69,4 +67,4 @@ audio = generator.generate(
     max_audio_length_ms=10_000,
 )
 
-torchaudio.save("audio.wav", audio.unsqueeze(0).cpu(), generator.sample_rate)
+torchaudio.save("audiooo.wav", audio.unsqueeze(0).cpu(), generator.sample_rate)
